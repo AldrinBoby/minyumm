@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c4t47uj61wtu5"]
+
+[ext_resource type="Texture2D" uid="uid://dxgbequ2bgcjn" path="res://resources/assets/nightdayblender.jpg" id="1_yp2cc"]
+
+[node name="TitleScreen" type="Node2D" unique_id=941669469]
+
+[node name="Background" type="TextureRect" parent="." unique_id=51480225]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_yp2cc")
+expand_mode = 1
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=800201605]
+clip_contents = false
+offset_left = 140.0
+offset_top = -34.0
+offset_right = 1060.0
+offset_bottom = 185.0
+theme_override_colors/default_color = Color(0.77051723, 0, 0.08862873, 1)
+theme_override_colors/selection_color = Color(0.5037842, 0.27832365, 0.28113952, 0.8)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 180
+text = "Minyumm"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1399687317]
+offset_left = 429.0
+offset_top = 231.0
+offset_right = 799.0
+offset_bottom = 506.0
+
+[node name="start" type="Button" parent="VBoxContainer" unique_id=616098405]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7176471, 0.1882353, 0.08627451, 1)
+theme_override_colors/font_focus_color = Color(8.471012e-06, 0.9530433, 0.7383353, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "start game
+"
+
+[node name="settings" type="Button" parent="VBoxContainer" unique_id=1423068588]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7176471, 0.1882353, 0.08627451, 1)
+theme_override_colors/font_focus_color = Color(8.471012e-06, 0.9530433, 0.7383353, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "settings"
+
+[node name="quit" type="Button" parent="VBoxContainer" unique_id=1159616706]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7176471, 0.1882353, 0.08627451, 1)
+theme_override_colors/font_focus_color = Color(8.471012e-06, 0.9530433, 0.7383353, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 26
+text = "Quit
+
+"
