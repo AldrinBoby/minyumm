@@ -1,4 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-/godot_super-wakatime/
+
+/addons/godot_super-wakatime/
