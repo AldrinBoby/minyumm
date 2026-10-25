@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b4n13220pgxy"]
+
+[ext_resource type="Texture2D" uid="uid://dxgbequ2bgcjn" path="res://resources/assets/nightdayblender.jpg" id="1_bfoy6"]
+[ext_resource type="PackedScene" uid="uid://cevok1yrqgsjq" path="res://resources/scenes/player.tscn" id="2_dgv7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
+size = Vector2(40, 40)
+
+[node name="minigame_1" type="Node2D" unique_id=1983877471]
+
+[node name="background" type="TextureRect" parent="." unique_id=1617974478]
+offset_left = -3645.0
+offset_top = -103.0
+offset_right = 1150.0
+offset_bottom = 2402.0
+texture = ExtResource("1_bfoy6")
+expand_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1020144639]
+position = Vector2(0, 608)
+scale = Vector2(28.902184, 0.9505272)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1230510181]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.8277123, 0.93072265, 0.52422553, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1835022938]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_3owqy")
+
+[node name="Player" parent="." unique_id=2072494263 instance=ExtResource("2_dgv7e")]
+position = Vector2(199, 417)
+scale = Vector2(3.698971, 3.0543947)

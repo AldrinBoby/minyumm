@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://csm75ermrorfi"]
+
+[ext_resource type="Shader" uid="uid://cdnbrwyv2w6kg" path="res://resources/assets/transition.gdshader" id="1_2uce7"]
+[ext_resource type="Texture2D" uid="uid://cwmhvnmfqd6e8" path="res://icon.svg" id="2_gb1ap"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_60pji"]
+shader = ExtResource("1_2uce7")
+shader_parameter/base_color = Color(0, 0, 0, 1)
+shader_parameter/node_resolution = Vector2(0, 0)
+shader_parameter/factor = 0.0
+shader_parameter/width = 0.4
+shader_parameter/gradient_texture = ExtResource("2_gb1ap")
+shader_parameter/gradient_fixed = false
+shader_parameter/shape_texture = ExtResource("2_gb1ap")
+shader_parameter/shape_tiling = 32.0
+shader_parameter/shape_rotation = 0.0
+shader_parameter/shape_scroll = Vector2(0, 0)
+shader_parameter/shape_feathering = 0.0
+shader_parameter/shape_treshold = 1.0
+
+[node name="transition" type="CanvasLayer" unique_id=193524296]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=483662700]
+material = SubResource("ShaderMaterial_60pji")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
