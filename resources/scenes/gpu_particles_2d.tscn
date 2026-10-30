@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cicy8a0xx5ksb"]
+
+[ext_resource type="Script" uid="uid://dlmhdyl13l6m7" path="res://gpu_particles_2d.gd" id="1_vw5io"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8upip"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D" unique_id=595193488]
+position = Vector2(213, 110)
+amount = 18
+explosiveness = 0.12
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_8upip")
+script = ExtResource("1_vw5io")

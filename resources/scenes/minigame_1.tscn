@@ -6,6 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
 size = Vector2(40, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8upip"]
+size = Vector2(12.664156, 40.769623)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drsw1"]
+size = Vector2(5.1729965, 32.746376)
+
 [node name="minigame_1" type="Node2D" unique_id=1983877471]
 
 [node name="background" type="TextureRect" parent="." unique_id=1617974478]
@@ -16,19 +22,83 @@ offset_bottom = 2402.0
 texture = ExtResource("1_bfoy6")
 expand_mode = 1
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1020144639]
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=1020144639]
 position = Vector2(0, 608)
 scale = Vector2(28.902184, 0.9505272)
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1230510181]
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=1230510181]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.8277123, 0.93072265, 0.52422553, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1835022938]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=1835022938]
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_3owqy")
 
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=291217871]
+position = Vector2(160.99998, 414)
+scale = Vector2(28.902184, 0.9505272)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=339356638]
+offset_right = 12.6634035
+offset_bottom = 40.0
+color = Color(0.8277123, 0.93072265, 0.52422553, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1516016034]
+position = Vector2(6.331321, 20.64505)
+scale = Vector2(1.0000004, 1.0000005)
+shape = SubResource("RectangleShape2D_8upip")
+
+[node name="Platform5" type="StaticBody2D" parent="." unique_id=1761530447]
+position = Vector2(221, 248.99998)
+scale = Vector2(28.902184, 0.9505272)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform5" unique_id=1334585707]
+offset_right = 12.6634035
+offset_bottom = 40.0
+color = Color(0.8277123, 0.93072265, 0.52422553, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5" unique_id=1957704229]
+position = Vector2(6.331321, 20.64505)
+scale = Vector2(1.0000004, 1.0000005)
+shape = SubResource("RectangleShape2D_8upip")
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=742297201]
+position = Vector2(8, 492.99997)
+scale = Vector2(28.902184, 0.9505272)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=432514271]
+offset_left = 19.96389
+offset_top = 3.1561584
+offset_right = 25.153809
+offset_bottom = 35.79181
+color = Color(0.8277123, 0.93072265, 0.52422553, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=671753784]
+position = Vector2(22.601913, 19.396423)
+scale = Vector2(1.0000004, 1.0000004)
+shape = SubResource("RectangleShape2D_drsw1")
+
+[node name="Platform4" type="StaticBody2D" parent="." unique_id=1054388263]
+position = Vector2(-571.00006, 318.99994)
+scale = Vector2(28.902184, 0.9505272)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Platform4" unique_id=801115348]
+offset_left = 19.96389
+offset_top = 3.1561584
+offset_right = 25.153809
+offset_bottom = 35.79181
+color = Color(0.8277123, 0.93072265, 0.52422553, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=1364663147]
+position = Vector2(22.601913, 19.396423)
+scale = Vector2(1.0000004, 1.0000004)
+shape = SubResource("RectangleShape2D_drsw1")
+
 [node name="Player" parent="." unique_id=2072494263 instance=ExtResource("2_dgv7e")]
-position = Vector2(199, 417)
-scale = Vector2(3.698971, 3.0543947)
+position = Vector2(70, 530)
+scale = Vector2(3.698971, 3.3743947)

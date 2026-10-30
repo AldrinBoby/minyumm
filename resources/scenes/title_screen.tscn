@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cn7ak40jvdrmh" path="res://resources/scripts/title_screen.tscn.gd" id="1_8mrob"]
 [ext_resource type="Texture2D" uid="uid://dxgbequ2bgcjn" path="res://resources/assets/nightdayblender.jpg" id="1_r64ju"]
-[ext_resource type="FontFile" uid="uid://ch5x03vjju5nc" path="res://resources/assets/Canterbury.ttf" id="3_px0ol"]
-[ext_resource type="FontFile" uid="uid://byhcdyw02yabo" path="res://resources/assets/SPOTABE.ttf" id="4_iqkcy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqkcy"]
 bg_color = Color(0, 0, 0, 1)
@@ -73,14 +71,13 @@ expand_mode = 1
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=800201605]
 clip_contents = false
-offset_left = 252.0
-offset_top = 146.0
-offset_right = 1185.0
-offset_bottom = 404.0
+offset_left = 176.0
+offset_top = 59.0
+offset_right = 1109.0
+offset_bottom = 317.0
 theme_override_colors/default_color = Color(0.2660992, 0.45544147, 0.3403854, 1)
 theme_override_colors/selection_color = Color(0.5037842, 0.27832365, 0.28113952, 0.8)
 theme_override_constants/outline_size = 40
-theme_override_fonts/normal_font = ExtResource("3_px0ol")
 theme_override_font_sizes/normal_font_size = 180
 text = "Minyumm"
 
@@ -96,7 +93,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.7176471, 0.1882353, 0.08627451, 1)
 theme_override_colors/font_focus_color = Color(8.471012e-06, 0.9530433, 0.7383353, 1)
 theme_override_constants/outline_size = 14
-theme_override_fonts/font = ExtResource("4_iqkcy")
 theme_override_font_sizes/font_size = 53
 theme_override_styles/normal = SubResource("StyleBoxFlat_iqkcy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4k2h5")
@@ -108,7 +104,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.7176471, 0.1882353, 0.08627451, 1)
 theme_override_colors/font_focus_color = Color(8.471012e-06, 0.9530433, 0.7383353, 1)
 theme_override_constants/outline_size = 14
-theme_override_fonts/font = ExtResource("4_iqkcy")
 theme_override_font_sizes/font_size = 53
 theme_override_styles/normal = SubResource("StyleBoxFlat_dfu4v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cl3wr")
@@ -119,7 +114,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.7176471, 0.1882353, 0.08627451, 1)
 theme_override_colors/font_focus_color = Color(8.471012e-06, 0.9530433, 0.7383353, 1)
 theme_override_constants/outline_size = 14
-theme_override_fonts/font = ExtResource("4_iqkcy")
 theme_override_font_sizes/font_size = 51
 theme_override_styles/normal = SubResource("StyleBoxFlat_hqbrg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_oyp7w")
