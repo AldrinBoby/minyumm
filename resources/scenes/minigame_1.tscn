@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dxgbequ2bgcjn" path="res://resources/assets/art by myself/nightdayblender.jpg" id="1_bfoy6"]
 [ext_resource type="PackedScene" uid="uid://cevok1yrqgsjq" path="res://resources/scenes/player.tscn" id="2_dgv7e"]
+[ext_resource type="Script" uid="uid://diy3521v8npum" path="res://resources/scripts/minigame_1.gd" id="2_tnahs"]
+[ext_resource type="PackedScene" uid="uid://dqf8a3q65xwum" path="res://resources/scenes/timer.tscn" id="4_d3q2q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
 size = Vector2(40, 40)
@@ -13,6 +15,7 @@ size = Vector2(12.664156, 40.769623)
 size = Vector2(5.1729965, 32.746376)
 
 [node name="minigame_1" type="Node2D" unique_id=1983877471]
+script = ExtResource("2_tnahs")
 
 [node name="background" type="TextureRect" parent="." unique_id=1617974478]
 offset_left = -3645.0
@@ -102,3 +105,7 @@ shape = SubResource("RectangleShape2D_drsw1")
 [node name="Player" parent="." unique_id=2072494263 instance=ExtResource("2_dgv7e")]
 position = Vector2(70, 530)
 scale = Vector2(3.698971, 3.3743947)
+
+[node name="Timer" parent="." unique_id=1755403364 instance=ExtResource("4_d3q2q")]
+position = Vector2(237.00003, 458)
+scale = Vector2(2.964968, 2.2728007)
