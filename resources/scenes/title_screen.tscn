@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cn7ak40jvdrmh" path="res://resources/scripts/title_screen.tscn.gd" id="1_8mrob"]
 [ext_resource type="Texture2D" uid="uid://dxgbequ2bgcjn" path="res://resources/assets/art by myself/nightdayblender.jpg" id="1_r64ju"]
 [ext_resource type="FontFile" uid="uid://h1e7d6t0ljih" path="res://resources/assets/fonts/Transcity DEMO.otf" id="3_px0ol"]
-[ext_resource type="AudioStream" uid="uid://lravn1cirmsj" path="res://resources/assets/Blip1.wav" id="4_iqkcy"]
+[ext_resource type="AudioStream" uid="uid://lravn1cirmsj" path="res://resources/assets/sounds/Blip1.wav" id="4_iqkcy"]
 
 [sub_resource type="Theme" id="Theme_mmhyf"]
 default_font = ExtResource("3_px0ol")

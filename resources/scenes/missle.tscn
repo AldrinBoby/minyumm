@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://mnxid1dt1l6x"]
+
+[ext_resource type="Texture2D" uid="uid://w41olqeanpjg" path="res://resources/assets/enemies/00 All_Rocket.png" id="1_6uwqh"]
+[ext_resource type="Script" uid="uid://bpr30jbnv30u1" path="res://resources/scripts/missle.gd" id="1_qbd25"]
+[ext_resource type="Texture2D" uid="uid://ck60myei0hmi2" path="res://resources/assets/enemies/spritsheet.png" id="3_o7u4f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8exco"]
+atlas = ExtResource("1_6uwqh")
+region = Rect2(288, 193, 32, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da1iy"]
+size = Vector2(10, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3clam"]
+atlas = ExtResource("3_o7u4f")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjv1q"]
+atlas = ExtResource("3_o7u4f")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51ekc"]
+atlas = ExtResource("3_o7u4f")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jupjy"]
+atlas = ExtResource("3_o7u4f")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68jng"]
+atlas = ExtResource("3_o7u4f")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvdwh"]
+atlas = ExtResource("3_o7u4f")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciuje"]
+atlas = ExtResource("3_o7u4f")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8opl4"]
+atlas = ExtResource("3_o7u4f")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5j82"]
+atlas = ExtResource("3_o7u4f")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cq4b"]
+atlas = ExtResource("3_o7u4f")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utdgv"]
+atlas = ExtResource("3_o7u4f")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2joc"]
+atlas = ExtResource("3_o7u4f")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6uwqh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3clam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjv1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51ekc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jupjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68jng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvdwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciuje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8opl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5j82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cq4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utdgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2joc")
+}],
+"loop": 0,
+"name": &"boom",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvdhw"]
+radius = 28.01785
+
+[node name="missle" type="CharacterBody2D" unique_id=742822091]
+script = ExtResource("1_qbd25")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=449177975]
+rotation = -1.5678132
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_8exco")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1796407801]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_da1iy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1925256059]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_6uwqh")
+animation = &"boom"
+
+[node name="damage" type="Area2D" parent="." unique_id=933448414]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage" unique_id=71372350]
+shape = SubResource("CircleShape2D_uvdhw")
+debug_color = Color(0.90588236, 0.49019608, 0.5411765, 0.08627451)
