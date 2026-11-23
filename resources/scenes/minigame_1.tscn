@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4n13220pgxy"]
 
-[ext_resource type="Texture2D" uid="uid://dxgbequ2bgcjn" path="res://resources/assets/nightdayblender.jpg" id="1_bfoy6"]
+[ext_resource type="Texture2D" uid="uid://dxgbequ2bgcjn" path="res://resources/assets/art by myself/nightdayblender.jpg" id="1_bfoy6"]
 [ext_resource type="PackedScene" uid="uid://cevok1yrqgsjq" path="res://resources/scenes/player.tscn" id="2_dgv7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]

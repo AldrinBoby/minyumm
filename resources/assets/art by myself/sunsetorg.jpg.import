@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceath5nfav14i"
-path="res://.godot/imported/heart.png-b2f6f87cf5ef0ffb86b0bca9655f9d26.ctex"
+uid="uid://u5rv8nulvr5x"
+path="res://.godot/imported/sunsetorg.jpg-d378702683d229348b95ebd6c5a2d35d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/assets/heart.png"
-dest_files=["res://.godot/imported/heart.png-b2f6f87cf5ef0ffb86b0bca9655f9d26.ctex"]
+source_file="res://resources/assets/art by myself/sunsetorg.jpg"
+dest_files=["res://.godot/imported/sunsetorg.jpg-d378702683d229348b95ebd6c5a2d35d.ctex"]
 
 [params]
 

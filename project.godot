@@ -27,6 +27,14 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://resources/assets/": "red",
+"res://resources/scenes/": "yellow",
+"res://resources/scripts/": "green"
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

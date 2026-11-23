@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b7pl71aq326xd"]
 
-[ext_resource type="Texture2D" uid="uid://u5rv8nulvr5x" path="res://resources/assets/sunsetorg.jpg" id="1_cbqer"]
+[ext_resource type="Texture2D" uid="uid://u5rv8nulvr5x" path="res://resources/assets/art by myself/sunsetorg.jpg" id="1_cbqer"]
 [ext_resource type="Script" uid="uid://cpeifofaf752p" path="res://resources/scripts/timer_screen.gd" id="1_wv0x8"]
-[ext_resource type="Texture2D" uid="uid://ceath5nfav14i" path="res://resources/assets/heart.png" id="2_ni28j"]
+[ext_resource type="Texture2D" uid="uid://ceath5nfav14i" path="res://resources/assets/art by myself/heart.png" id="2_ni28j"]
 
 [node name="level_scene" type="Node2D" unique_id=836218273]
 script = ExtResource("1_wv0x8")

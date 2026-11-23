@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u5rv8nulvr5x"
-path="res://.godot/imported/sunsetorg.jpg-47ee2a80605763b309dbc54770786a85.ctex"
+uid="uid://dxgbequ2bgcjn"
+path="res://.godot/imported/nightdayblender.jpg-fbd5a25f3a8c3b900c7c080bab101d0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/assets/sunsetorg.jpg"
-dest_files=["res://.godot/imported/sunsetorg.jpg-47ee2a80605763b309dbc54770786a85.ctex"]
+source_file="res://resources/assets/art by myself/nightdayblender.jpg"
+dest_files=["res://.godot/imported/nightdayblender.jpg-fbd5a25f3a8c3b900c7c080bab101d0f.ctex"]
 
 [params]
 

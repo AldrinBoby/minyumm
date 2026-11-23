@@ -1,14 +1,20 @@
 [gd_scene format=3 uid="uid://bq0eib0snxfuw"]
 
 [ext_resource type="Script" uid="uid://cn7ak40jvdrmh" path="res://resources/scripts/title_screen.tscn.gd" id="1_8mrob"]
-[ext_resource type="Texture2D" uid="uid://dxgbequ2bgcjn" path="res://resources/assets/nightdayblender.jpg" id="1_r64ju"]
+[ext_resource type="Texture2D" uid="uid://dxgbequ2bgcjn" path="res://resources/assets/art by myself/nightdayblender.jpg" id="1_r64ju"]
+[ext_resource type="FontFile" uid="uid://h1e7d6t0ljih" path="res://resources/assets/fonts/Transcity DEMO.otf" id="3_px0ol"]
+[ext_resource type="AudioStream" uid="uid://lravn1cirmsj" path="res://resources/assets/Blip1.wav" id="4_iqkcy"]
+
+[sub_resource type="Theme" id="Theme_mmhyf"]
+default_font = ExtResource("3_px0ol")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqkcy"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0.28235295, 0.05490196, 1)
 border_width_left = 6
 border_width_top = 6
 border_width_right = 6
 border_width_bottom = 6
+border_color = Color(0.49411765, 0.9098039, 0.54901963, 1)
 corner_radius_top_left = 9
 corner_radius_top_right = 9
 corner_radius_bottom_right = 9
@@ -24,13 +30,16 @@ corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 corner_detail = 9
 
+[sub_resource type="Theme" id="Theme_iqkcy"]
+default_font = ExtResource("3_px0ol")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfu4v"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0.28235295, 0.05490196, 1)
 border_width_left = 6
 border_width_top = 6
 border_width_right = 6
 border_width_bottom = 6
-border_color = Color(1, 1, 1, 1)
+border_color = Color(0.49411765, 0.9098039, 0.54901963, 1)
 corner_radius_top_left = 9
 corner_radius_top_right = 9
 corner_radius_bottom_right = 9
@@ -45,12 +54,17 @@ corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 corner_detail = 9
 
+[sub_resource type="Theme" id="Theme_px0ol"]
+default_font = ExtResource("3_px0ol")
+default_font_size = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqbrg"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0.28235295, 0.05490196, 1)
 border_width_left = 9
 border_width_top = 9
 border_width_right = 9
 border_width_bottom = 9
+border_color = Color(0.49476808, 0.91036665, 0.5479115, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyp7w"]
 bg_color = Color(1, 1, 1, 1)
@@ -69,29 +83,27 @@ offset_bottom = 648.0
 texture = ExtResource("1_r64ju")
 expand_mode = 1
 
-[node name="Title" type="RichTextLabel" parent="." unique_id=800201605]
-clip_contents = false
-offset_left = 176.0
-offset_top = 59.0
-offset_right = 1109.0
-offset_bottom = 317.0
-theme_override_colors/default_color = Color(0.2660992, 0.45544147, 0.3403854, 1)
-theme_override_colors/selection_color = Color(0.5037842, 0.27832365, 0.28113952, 0.8)
-theme_override_constants/outline_size = 40
-theme_override_font_sizes/normal_font_size = 180
-text = "Minyumm"
+[node name="ColorRect" type="ColorRect" parent="." unique_id=160521228]
+modulate = Color(0.28235295, 1, 0.12156863, 0.16862746)
+offset_left = -68.0
+offset_top = -96.0
+offset_right = -28.0
+offset_bottom = -56.0
+scale = Vector2(36.02146, 21.538137)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1399687317]
-offset_left = 413.0
-offset_top = 291.0
-offset_right = 783.0
-offset_bottom = 566.0
+offset_left = 356.0
+offset_top = 241.0
+offset_right = 863.0
+offset_bottom = 457.0
 alignment = 1
 
 [node name="start" type="Button" parent="VBoxContainer" unique_id=616098405]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7176471, 0.1882353, 0.08627451, 1)
+theme = SubResource("Theme_mmhyf")
+theme_override_colors/font_color = Color(0.28627452, 0.4627451, 0.15294118, 1)
 theme_override_colors/font_focus_color = Color(8.471012e-06, 0.9530433, 0.7383353, 1)
+theme_override_colors/font_hover_color = Color(0.8355727, 0.99999994, 0.8610629, 1)
 theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 53
 theme_override_styles/normal = SubResource("StyleBoxFlat_iqkcy")
@@ -101,7 +113,8 @@ text = "start game
 
 [node name="settings" type="Button" parent="VBoxContainer" unique_id=1423068588]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7176471, 0.1882353, 0.08627451, 1)
+theme = SubResource("Theme_iqkcy")
+theme_override_colors/font_color = Color(0.28627452, 0.4627451, 0.15294118, 1)
 theme_override_colors/font_focus_color = Color(8.471012e-06, 0.9530433, 0.7383353, 1)
 theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 53
@@ -111,7 +124,8 @@ text = "settings"
 
 [node name="quit" type="Button" parent="VBoxContainer" unique_id=1159616706]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7176471, 0.1882353, 0.08627451, 1)
+theme = SubResource("Theme_px0ol")
+theme_override_colors/font_color = Color(0.28627452, 0.4627451, 0.15294118, 1)
 theme_override_colors/font_focus_color = Color(8.471012e-06, 0.9530433, 0.7383353, 1)
 theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 51
@@ -121,5 +135,25 @@ text = "Quit
 
 "
 
+[node name="Title" type="RichTextLabel" parent="." unique_id=800201605]
+clip_contents = false
+offset_left = 167.0
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 227.0
+theme_override_colors/default_color = Color(0.26666668, 0.69411767, 0.34117648, 1)
+theme_override_colors/selection_color = Color(0.5037842, 0.27832365, 0.28113952, 0.8)
+theme_override_constants/outline_size = 40
+theme_override_fonts/normal_font = ExtResource("3_px0ol")
+theme_override_font_sizes/normal_font_size = 250
+text = "Minyumm"
+scroll_active = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1823919606]
+stream = ExtResource("4_iqkcy")
+
+[connection signal="mouse_entered" from="VBoxContainer/start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/settings" to="." method="_on_settings_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
