@@ -1,5 +1,6 @@
 extends Node2D
-@onready var timer: Node2D = $Timer
+@onready var timer: Node2D = $Player/Timer
+
 
 
 # Called when the node enters the scene tree for the first time.

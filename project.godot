@@ -31,6 +31,8 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 folder_colors={
 "res://resources/assets/": "red",
+"res://resources/assets/art by myself/": "teal",
+"res://resources/assets/swamp-game-tileset/": "purple",
 "res://resources/scenes/": "yellow",
 "res://resources/scripts/": "green"
 }

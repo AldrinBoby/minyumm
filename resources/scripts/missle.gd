@@ -9,7 +9,7 @@ extends CharacterBody2D
 
 var exploding:bool = false
 func _ready() -> void:
-	pass # Replace with function body.
+	boom.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 		explode()
 func explode() -> void:
 		velocity = Vector2.ZERO
+		boom.show()
 		exploding = true
 		sprite.hide()
 		collisionshape.set_deferred("disabled",true)

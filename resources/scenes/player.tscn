@@ -254,4 +254,8 @@ texture_filter = 1
 position = Vector2(-1.5000001, 6.9999995)
 scale = Vector2(0.4842192, 0.57186717)
 sprite_frames = SubResource("SpriteFrames_wvopj")
-animation = &"fall"
+animation = &"jump"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=740066032]
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true

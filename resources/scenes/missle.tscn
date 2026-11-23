@@ -107,6 +107,7 @@ animations = [{
 radius = 28.01785
 
 [node name="missle" type="CharacterBody2D" unique_id=742822091]
+scale = Vector2(4, 4)
 script = ExtResource("1_qbd25")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=449177975]
