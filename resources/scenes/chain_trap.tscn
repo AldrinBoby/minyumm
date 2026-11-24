@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://di4w7x8877u5l"]
+
+[ext_resource type="Texture2D" uid="uid://6px87omfmjxw" path="res://resources/assets/pixel_adventure pack/Traps/Spiked Ball/Spiked Ball.png" id="1_5x107"]
+[ext_resource type="Texture2D" uid="uid://6kj76e56syk5" path="res://resources/assets/pixel_adventure pack/Traps/Spiked Ball/Chain.png" id="2_cpwov"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gj32w"]
+radius = 9.0
+
+[node name="chain_trap" type="Node2D" unique_id=1934610839]
+
+[node name="ball" type="Area2D" parent="." unique_id=575030588]
+
+[node name="SpikedBall" type="Sprite2D" parent="ball" unique_id=144351307]
+position = Vector2(0, 70)
+texture = ExtResource("1_5x107")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ball" unique_id=255439181]
+position = Vector2(0, 71)
+shape = SubResource("CircleShape2D_gj32w")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=660247022]
+
+[node name="Chain" type="Sprite2D" parent="Node2D" unique_id=613163686]
+position = Vector2(0, 3)
+texture = ExtResource("2_cpwov")
+
+[node name="Chain2" type="Sprite2D" parent="Node2D" unique_id=861654531]
+position = Vector2(-1, 10)
+texture = ExtResource("2_cpwov")
+
+[node name="Chain3" type="Sprite2D" parent="Node2D" unique_id=1062978581]
+position = Vector2(0, 17)
+texture = ExtResource("2_cpwov")
+
+[node name="Chain4" type="Sprite2D" parent="Node2D" unique_id=1800679099]
+position = Vector2(-1, 24)
+texture = ExtResource("2_cpwov")
+
+[node name="Chain5" type="Sprite2D" parent="Node2D" unique_id=516437908]
+position = Vector2(0, 31)
+texture = ExtResource("2_cpwov")
+
+[node name="Chain6" type="Sprite2D" parent="Node2D" unique_id=1726231003]
+position = Vector2(-1, 38)
+texture = ExtResource("2_cpwov")
+
+[node name="Chain7" type="Sprite2D" parent="Node2D" unique_id=2051554151]
+position = Vector2(0, 45)
+texture = ExtResource("2_cpwov")
+
+[node name="Chain8" type="Sprite2D" parent="Node2D" unique_id=905553548]
+position = Vector2(-1, 52)
+texture = ExtResource("2_cpwov")
+
+[node name="Chain9" type="Sprite2D" parent="Node2D" unique_id=1717106702]
+position = Vector2(0, 58)
+texture = ExtResource("2_cpwov")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=718028437]

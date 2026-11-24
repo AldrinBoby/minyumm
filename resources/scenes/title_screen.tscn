@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cn7ak40jvdrmh" path="res://resources/scripts/title_screen.tscn.gd" id="1_8mrob"]
 [ext_resource type="Texture2D" uid="uid://dxgbequ2bgcjn" path="res://resources/assets/art by myself/nightdayblender.jpg" id="1_r64ju"]
-[ext_resource type="FontFile" uid="uid://h1e7d6t0ljih" path="res://resources/assets/fonts/Transcity DEMO.otf" id="3_px0ol"]
+[ext_resource type="FontFile" uid="uid://d3oy8t06apepv" path="res://resources/assets/fonts/LowresPixel-Regular.otf" id="3_iqkcy"]
 [ext_resource type="AudioStream" uid="uid://lravn1cirmsj" path="res://resources/assets/sounds/Blip1.wav" id="4_iqkcy"]
 
 [sub_resource type="Theme" id="Theme_mmhyf"]
-default_font = ExtResource("3_px0ol")
+default_font = ExtResource("3_iqkcy")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqkcy"]
 bg_color = Color(0, 0.28235295, 0.05490196, 1)
@@ -31,7 +31,7 @@ corner_radius_bottom_left = 9
 corner_detail = 9
 
 [sub_resource type="Theme" id="Theme_iqkcy"]
-default_font = ExtResource("3_px0ol")
+default_font = ExtResource("3_iqkcy")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfu4v"]
 bg_color = Color(0, 0.28235295, 0.05490196, 1)
@@ -55,7 +55,7 @@ corner_radius_bottom_left = 9
 corner_detail = 9
 
 [sub_resource type="Theme" id="Theme_px0ol"]
-default_font = ExtResource("3_px0ol")
+default_font = ExtResource("3_iqkcy")
 default_font_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqbrg"]
@@ -83,6 +83,12 @@ offset_bottom = 648.0
 texture = ExtResource("1_r64ju")
 expand_mode = 1
 
+[node name="ColorRect2" type="ColorRect" parent="Background" unique_id=1058045376]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 650.0
+color = Color(0, 0.78333104, 0.38704568, 1)
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=160521228]
 modulate = Color(0.28235295, 1, 0.12156863, 0.16862746)
 offset_left = -68.0
@@ -92,10 +98,10 @@ offset_bottom = -56.0
 scale = Vector2(36.02146, 21.538137)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1399687317]
-offset_left = 356.0
-offset_top = 241.0
-offset_right = 863.0
-offset_bottom = 457.0
+offset_left = 342.0
+offset_top = 293.0
+offset_right = 849.0
+offset_bottom = 509.0
 alignment = 1
 
 [node name="start" type="Button" parent="VBoxContainer" unique_id=616098405]
@@ -137,14 +143,14 @@ text = "Quit
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=800201605]
 clip_contents = false
-offset_left = 167.0
-offset_top = -1.0
-offset_right = 1152.0
-offset_bottom = 227.0
+offset_left = 119.0
+offset_top = 51.0
+offset_right = 1104.0
+offset_bottom = 279.0
 theme_override_colors/default_color = Color(0.26666668, 0.69411767, 0.34117648, 1)
 theme_override_colors/selection_color = Color(0.5037842, 0.27832365, 0.28113952, 0.8)
 theme_override_constants/outline_size = 40
-theme_override_fonts/normal_font = ExtResource("3_px0ol")
+theme_override_fonts/normal_font = ExtResource("3_iqkcy")
 theme_override_font_sizes/normal_font_size = 250
 text = "Minyumm"
 scroll_active = false

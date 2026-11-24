@@ -258,4 +258,6 @@ animation = &"jump"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=740066032]
 zoom = Vector2(1.5, 1.5)
+limit_top = 73
+limit_bottom = 851
 position_smoothing_enabled = true

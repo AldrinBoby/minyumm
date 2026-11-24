@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://mnxid1dt1l6x" path="res://resources/scenes/missle.tscn" id="5_d3q2q"]
 [ext_resource type="Texture2D" uid="uid://c2284mm1t7at0" path="res://resources/assets/swamp-game-tileset/2 Background/Layers/4.png" id="5_ksywh"]
 [ext_resource type="Texture2D" uid="uid://duxxcpverq174" path="res://resources/assets/swamp-game-tileset/2 Background/Layers/5.png" id="6_ax64p"]
+[ext_resource type="PackedScene" uid="uid://dy7yiuytr5mdo" path="res://resources/scenes/moving_platform.tscn" id="11_3ets1"]
+[ext_resource type="Texture2D" uid="uid://cynv3d7wwyqwf" path="res://resources/assets/swamp-game-tileset/3 Objects/Boxes/3.png" id="12_61f71"]
+[ext_resource type="Texture2D" uid="uid://gs8cdw27rgmk" path="res://resources/assets/swamp-game-tileset/3 Objects/Bushes/9.png" id="13_ax64p"]
+[ext_resource type="Texture2D" uid="uid://xh8furlftkf1" path="res://resources/assets/swamp-game-tileset/3 Objects/Willows/3.png" id="14_ax64p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lpo1a"]
 texture = ExtResource("2_d3q2q")
@@ -399,13 +403,52 @@ texture = ExtResource("2_d3q2q")
 18:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:11/0 = 0
 19:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_tnahs"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lpo1a")
 
+[sub_resource type="Animation" id="Animation_djw1k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3162, 617)]
+}
+
+[sub_resource type="Animation" id="Animation_ax64p"]
+resource_name = "move"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3162, 617), Vector2(-2864, 617)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_djw1k"]
+_data = {
+&"RESET": SubResource("Animation_djw1k"),
+&"move": SubResource("Animation_ax64p")
+}
+
 [node name="minigame_1" type="Node2D" unique_id=1983877471]
 script = ExtResource("2_tnahs")
+metadata/_edit_horizontal_guides_ = [73.0, 851.0]
 
 [node name="background" type="Node2D" parent="." unique_id=207027129]
 scale = Vector2(1.2, 1.2)
@@ -462,11 +505,11 @@ texture = ExtResource("6_ax64p")
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=454779389]
 position = Vector2(3.0517578e-05, 1.9073486e-06)
 scale = Vector2(3, 2.9999998)
-tile_map_data = PackedByteArray("AAAAAA0AAAAMAAAAAAABAA0AAAANAAAAAAACAA0AAAAOAAAAAAADAA0AAAAPAAAAAAAEAA0AAAAQAAAAAAAFAA0AAAARAAAAAAAGAA0AAAAMAAAAAAAHAA0AAAANAAAAAAAIAA0AAAAOAAAAAAAJAA0AAAAPAAAAAAAKAA0AAAAQAAAAAAALAA0AAAARAAAAAAAOAAgAAAAMAAAAAAAPAAgAAAANAAAAAAAQAAgAAAAOAAAAAAARAAgAAAAPAAAAAAASAAgAAAAQAAAAAAAUAAwAAAAMAAAAAAAVAAwAAAANAAAAAAAWAAwAAAAOAAAAAAAXAAwAAAAPAAAAAAAYAAwAAAAQAAAAAAAXAAYAAAAMAAAAAAAYAAYAAAANAAAAAAAZAAYAAAAOAAAAAAAaAAYAAAAPAAAAAAAbAAYAAAAQAAAAAAAaAAgAAAAMAAAAAAAbAAgAAAANAAAAAAAcAAgAAAAOAAAAAAAdAAgAAAAPAAAAAAAeAAgAAAAQAAAAAAAhAAsAAAAMAAAAAAAiAAsAAAANAAAAAAAjAAsAAAAOAAAAAAAkAAsAAAAPAAAAAAAlAAsAAAAQAAAAAAAjAAYAAAAMAAAAAAAkAAYAAAANAAAAAAAlAAYAAAAOAAAAAAAmAAYAAAAPAAAAAAAnAAYAAAAQAAAAAAAJAAsAAAAMAAAAAAAKAAsAAAANAAAAAAALAAsAAAAOAAAAAAAMAAsAAAAPAAAAAAANAAsAAAAQAAAAAAANAAkAAAAMAAAAAAAOAAkAAAANAAAAAAAPAAkAAAAOAAAAAAAQAAkAAAAPAAAAAAARAAkAAAAQAAAAAAAUAAoAAAAMAAAAAAAVAAoAAAANAAAAAAAWAAoAAAAOAAAAAAAXAAoAAAAPAAAAAAAYAAoAAAAQAAAAAAAhAAgAAAAMAAAAAAAiAAgAAAANAAAAAAAjAAgAAAAOAAAAAAAkAAgAAAAPAAAAAAAlAAgAAAAQAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAA0AAAAMAAAAAAABAA0AAAANAAAAAAACAA0AAAAOAAAAAAADAA0AAAAPAAAAAAAEAA0AAAAQAAAAAAAFAA0AAAARAAAAAAAGAA0AAAAMAAAAAAAHAA0AAAANAAAAAAAIAA0AAAAOAAAAAAAJAA0AAAAPAAAAAAAKAA0AAAAQAAAAAAALAA0AAAARAAAAAAAOAAgAAAAMAAAAAAAPAAgAAAANAAAAAAAQAAgAAAAOAAAAAAARAAgAAAAPAAAAAAASAAgAAAAQAAAAAAAUAAwAAAAMAAAAAAAVAAwAAAANAAAAAAAWAAwAAAAOAAAAAAAXAAwAAAAPAAAAAAAYAAwAAAAQAAAAAAAXAAYAAAAMAAAAAAAYAAYAAAANAAAAAAAZAAYAAAAOAAAAAAAaAAYAAAAPAAAAAAAbAAYAAAAQAAAAAAAaAAgAAAAMAAAAAAAbAAgAAAANAAAAAAAcAAgAAAAOAAAAAAAdAAgAAAAPAAAAAAAeAAgAAAAQAAAAAAAhAAsAAAAMAAAAAAAiAAsAAAANAAAAAAAjAAsAAAAOAAAAAAAkAAsAAAAPAAAAAAAlAAsAAAAQAAAAAAAjAAYAAAAMAAAAAAAkAAYAAAANAAAAAAAlAAYAAAAOAAAAAAAmAAYAAAAPAAAAAAAnAAYAAAAQAAAAAAAJAAsAAAAMAAAAAAAKAAsAAAANAAAAAAALAAsAAAAOAAAAAAAMAAsAAAAPAAAAAAANAAsAAAAQAAAAAAANAAkAAAAMAAAAAAAOAAkAAAANAAAAAAAPAAkAAAAOAAAAAAAQAAkAAAAPAAAAAAARAAkAAAAQAAAAAAAUAAoAAAAMAAAAAAAVAAoAAAANAAAAAAAWAAoAAAAOAAAAAAAXAAoAAAAPAAAAAAAYAAoAAAAQAAAAAAAhAAgAAAAMAAAAAAAiAAgAAAANAAAAAAAjAAgAAAAOAAAAAAAkAAgAAAAPAAAAAAAlAAgAAAAQAAAAAACz/w4AAAASAAAAAAC0/w4AAAATAAAAAAC1/w4AAAADAAAAAAC2/w4AAAABAAAAAAC3/w4AAAABAAAAAAC4/w4AAAACAAAAAAC5/w4AAAADAAAAAAC6/w4AAAAEAAAAAAC7/w4AAAAFAAAAAAC7/w8AAAAFAAEAAAC7/xAAAAAFAAIAAAC3/w8AAAABAAEAAAC3/xAAAAABAAIAAAC4/w8AAAACAAEAAAC4/xAAAAACAAIAAAC5/w8AAAADAAEAAAC5/xAAAAADAAIAAAC6/w8AAAAEAAEAAAC6/xAAAAAEAAIAAACz/w8AAAASAAEAAACz/xAAAAABAAIAAAC0/w8AAAATAAEAAAC0/xAAAAACAAIAAAC1/w8AAAADAAEAAAC1/xAAAAADAAIAAAC2/w8AAAAEAAEAAAC2/xAAAAAEAAIAAACy/w4AAAAAAAAAAACy/w8AAAAAAAEAAACy/xAAAAAAAAIAAACy/xEAAAAAAAMAAAC7/xEAAAAFAAMAAACz/xEAAAABAAMAAAC0/xEAAAACAAMAAAC1/xEAAAADAAMAAAC2/xEAAAAEAAMAAAC3/xEAAAABAAMAAAC4/xEAAAACAAMAAAC5/xEAAAADAAMAAAC6/xEAAAAEAAMAAACy/wcAAAAMAAAAAACz/wcAAAANAAAAAAC0/wcAAAAOAAAAAAC1/wcAAAAMAAAAAAC2/wcAAAANAAAAAAC3/wcAAAAOAAAAAAC4/wcAAAAPAAAAAAC5/wcAAAAQAAAAAAC6/wcAAAARAAAAAAA=")
 tile_set = SubResource("TileSet_tnahs")
 
 [node name="Player" parent="." unique_id=2072494263 instance=ExtResource("2_dgv7e")]
-position = Vector2(70, 530)
+position = Vector2(-3573, 378.00006)
 scale = Vector2(3.698971, 3.3743947)
 
 [node name="Timer" parent="Player" unique_id=1755403364 instance=ExtResource("4_d3q2q")]
@@ -487,3 +530,28 @@ position = Vector2(588, -279)
 
 [node name="missle5" parent="." unique_id=1846461521 instance=ExtResource("5_d3q2q")]
 position = Vector2(377, 302)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2116912315]
+position = Vector2(-3695, 652)
+scale = Vector2(1.8175421, 1.6346117)
+
+[node name="4" type="Sprite2D" parent="Node2D" unique_id=1454343981]
+position = Vector2(-156.25476, -91.15311)
+scale = Vector2(2.1345446, 2.3734226)
+texture = ExtResource("14_ax64p")
+
+[node name="9" type="Sprite2D" parent="Node2D" unique_id=2000644628]
+position = Vector2(153.50407, -4.2823644)
+scale = Vector2(1.0958773, 1.4560032)
+texture = ExtResource("13_ax64p")
+
+[node name="3" type="Sprite2D" parent="Node2D" unique_id=349941353]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("12_61f71")
+
+[node name="moving platform" parent="." unique_id=753689775 instance=ExtResource("11_3ets1")]
+position = Vector2(-3162, 617)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="moving platform" unique_id=976639827]
+libraries/ = SubResource("AnimationLibrary_djw1k")
+autoplay = &"move"

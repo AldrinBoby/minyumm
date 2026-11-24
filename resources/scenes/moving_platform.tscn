@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dy7yiuytr5mdo"]
+
+[ext_resource type="Texture2D" uid="uid://c5048dy6y0s1l" path="res://resources/assets/swamp-game-tileset/1 Tiles/Tile_09.png" id="1_oiuhp"]
+[ext_resource type="Texture2D" uid="uid://dwvyjtlclffvm" path="res://resources/assets/swamp-game-tileset/1 Tiles/Tile_07.png" id="2_6m2v4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdhw"]
+size = Vector2(93.5, 14.5)
+
+[node name="moving platform" type="AnimatableBody2D" unique_id=1567650263]
+position = Vector2(2, 10)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1276275414]
+texture = ExtResource("1_oiuhp")
+
+[node name="Tile09" type="Sprite2D" parent="." unique_id=312047012]
+position = Vector2(30, 0)
+texture = ExtResource("1_oiuhp")
+
+[node name="Tile07" type="Sprite2D" parent="." unique_id=399438707]
+position = Vector2(-32, 0)
+texture = ExtResource("2_6m2v4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1762745886]
+position = Vector2(-0.75, -8.25)
+shape = SubResource("RectangleShape2D_uvdhw")
