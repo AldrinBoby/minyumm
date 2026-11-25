@@ -1,12 +1,20 @@
 extends CharacterBody2D
 
 @onready var animated: AnimatedSprite2D = $AnimatedSprite2D
-
+@export var health = 3
 const SPEED = 500.0
 const JUMP_VELOCITY = -500.0
 
 
+func _ready() -> void:
+	$"..".respawn = global_position
+
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("l"):
+		damage(1)
+		print(health)
+
+		
 # Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -43,7 +51,14 @@ func _physics_process(delta: float) -> void:
 	elif direction == 0:
 		animated.play("idle")
 
-
-		
-
 	move_and_slide()
+	
+func damage(amount:int):
+	health -= amount
+	health = max(health,0)
+		
+func respawn():
+		#Adds the respawn
+	if health == 0:
+		global_position = $"..".respawn
+		health = 3
