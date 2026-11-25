@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c60ps3au1gml8" path="res://resources/assets/character/-fall.png" id="2_hhlkn"]
 [ext_resource type="Texture2D" uid="uid://dibbqyho6j3x7" path="res://resources/assets/character/run.png" id="3_8hawy"]
 [ext_resource type="Texture2D" uid="uid://bnvmpk16giptg" path="res://resources/assets/character/-jump.png" id="3_ubjcb"]
-[ext_resource type="AudioStream" uid="uid://cel5ubr7ss33j" path="res://resources/assets/sounds/slap.wav" id="6_4bag7"]
+[ext_resource type="AudioStream" uid="uid://dungj546q6qd1" path="res://resources/assets/sounds/Hit31.wav" id="6_o7bv2"]
 [ext_resource type="AudioStream" uid="uid://pmv8y1044ied" path="res://resources/assets/sounds/jump_short.wav" id="7_wwmvc"]
 [ext_resource type="AudioStream" uid="uid://dtxrq85do77p6" path="res://resources/assets/sounds/foley_footstep_vinyl_4.wav" id="8_o7bv2"]
 
@@ -260,7 +260,7 @@ sprite_frames = SubResource("SpriteFrames_wvopj")
 animation = &"jump"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=740066032]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.3, 1.3)
 limit_top = 73
 limit_bottom = 851
 position_smoothing_enabled = true
@@ -268,7 +268,7 @@ position_smoothing_enabled = true
 [node name="sounds" type="Node2D" parent="." unique_id=1974230737]
 
 [node name="hurt" type="AudioStreamPlayer2D" parent="sounds" unique_id=2050290077]
-stream = ExtResource("6_4bag7")
+stream = ExtResource("6_o7bv2")
 volume_db = 24.0
 
 [node name="jump" type="AudioStreamPlayer2D" parent="sounds" unique_id=1884878730]

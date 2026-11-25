@@ -19,6 +19,12 @@
 [ext_resource type="Script" uid="uid://dx7qga3l5exrp" path="res://resources/scripts/checkpoint.gd" id="14_m5x5l"]
 [ext_resource type="Texture2D" uid="uid://bs0qtlf6wib3w" path="res://resources/assets/pixel_adventure pack/Items/Checkpoints/Checkpoint/Checkpoint (Flag Out) (64x64).png" id="15_a7pc0"]
 [ext_resource type="Texture2D" uid="uid://b34th5yftx6ej" path="res://resources/assets/pixel_adventure pack/Items/Checkpoints/Checkpoint/Checkpoint (Flag Idle)(64x64).png" id="16_ys7jl"]
+[ext_resource type="Texture2D" uid="uid://c16ffemqohinn" path="res://resources/assets/swamp-game-tileset/3 Objects/Willows/2.png" id="20_vaaki"]
+[ext_resource type="Texture2D" uid="uid://dwbc30sa7dxj1" path="res://resources/assets/swamp-game-tileset/3 Objects/Stones/1.png" id="21_ijhkg"]
+[ext_resource type="Texture2D" uid="uid://evedh2462b6a" path="res://resources/assets/swamp-game-tileset/3 Objects/Ridges/3.png" id="22_swlna"]
+[ext_resource type="Texture2D" uid="uid://d4h2jwdayslao" path="res://resources/assets/swamp-game-tileset/3 Objects/Pointers/1.png" id="23_q4cin"]
+[ext_resource type="Texture2D" uid="uid://d4eh65jijy6k0" path="res://resources/assets/swamp-game-tileset/3 Objects/Grass/2.png" id="24_8k3wh"]
+[ext_resource type="Texture2D" uid="uid://dddw01i0qjwu3" path="res://resources/assets/swamp-game-tileset/3 Objects/Grass/1.png" id="25_s2u8w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bcibv"]
 
@@ -1051,6 +1057,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uvdhw"]
+radius = 4.9222426
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uvdhw"]
 distance = -852.0
@@ -1179,7 +1186,7 @@ tile_map_data = PackedByteArray("AAAAAA0AAAAMAAAAAAABAA0AAAANAAAAAAACAA0AAAAOAAA
 tile_set = SubResource("TileSet_tnahs")
 
 [node name="Player" parent="." unique_id=2072494263 instance=ExtResource("2_dgv7e")]
-position = Vector2(-3552, 411)
+position = Vector2(-3545.9998, 505)
 scale = Vector2(3.698971, 3.3743947)
 
 [node name="Timer" parent="Player" unique_id=1755403364 instance=ExtResource("4_d3q2q")]
@@ -1211,20 +1218,26 @@ position = Vector2(-3162, 617)
 libraries/ = SubResource("AnimationLibrary_djw1k")
 autoplay = &"move"
 
+[node name="moving platform2" parent="." unique_id=1567650263 instance=ExtResource("11_3ets1")]
+position = Vector2(-1949, 530)
+
+[node name="moving platform3" parent="." unique_id=1598843159 instance=ExtResource("11_3ets1")]
+position = Vector2(-1562, 530)
+
 [node name="checkpoint" type="Area2D" parent="." unique_id=1182526926]
-position = Vector2(-2618, 567)
+position = Vector2(-3596, 644)
 scale = Vector2(2, 2)
 script = ExtResource("14_m5x5l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="checkpoint" unique_id=1454889248]
-position = Vector2(9, -32)
+position = Vector2(8.5, -18)
 sprite_frames = SubResource("SpriteFrames_uvdhw")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.35529387
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="checkpoint" unique_id=1234151951]
-position = Vector2(0, -27)
+position = Vector2(5.5, -6.5)
 scale = Vector2(8.470185, 8.470185)
 shape = SubResource("CircleShape2D_uvdhw")
 
@@ -1248,6 +1261,56 @@ shape = SubResource("CircleShape2D_uvdhw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundary" unique_id=819337668]
 shape = SubResource("WorldBoundaryShape2D_uvdhw")
+
+[node name="2" type="Sprite2D" parent="." unique_id=600090237]
+position = Vector2(-2741, 928)
+scale = Vector2(3.2918966, 3.2918966)
+texture = ExtResource("20_vaaki")
+
+[node name="1" type="Sprite2D" parent="." unique_id=255050021]
+position = Vector2(-2501, 557)
+scale = Vector2(0.6454835, 0.6454835)
+texture = ExtResource("21_ijhkg")
+
+[node name="3" type="Sprite2D" parent="." unique_id=230960343]
+position = Vector2(-3534.9998, 301)
+scale = Vector2(1.9366068, 1.9366068)
+texture = ExtResource("22_swlna")
+
+[node name="4" type="Sprite2D" parent="." unique_id=41484457]
+position = Vector2(-3438, 644)
+scale = Vector2(2.720842, 2.720842)
+texture = ExtResource("23_q4cin")
+
+[node name="5" type="Sprite2D" parent="." unique_id=1734702374]
+position = Vector2(-3424.0002, 661)
+scale = Vector2(1.7840716, 1.7840716)
+texture = ExtResource("24_8k3wh")
+
+[node name="6" type="Sprite2D" parent="." unique_id=572486034]
+position = Vector2(-3450, 661.00006)
+scale = Vector2(1.7840716, 1.7840716)
+texture = ExtResource("24_8k3wh")
+
+[node name="8" type="Sprite2D" parent="." unique_id=2097932446]
+position = Vector2(-2486, 563)
+scale = Vector2(1.7840716, 1.7840716)
+texture = ExtResource("24_8k3wh")
+
+[node name="10" type="Sprite2D" parent="." unique_id=1401375405]
+position = Vector2(-2572, 562)
+scale = Vector2(1.7840716, 1.7840716)
+texture = ExtResource("24_8k3wh")
+
+[node name="7" type="Sprite2D" parent="." unique_id=106172538]
+position = Vector2(-2521, 562)
+scale = Vector2(1.6961261, 1.6961261)
+texture = ExtResource("25_s2u8w")
+
+[node name="9" type="Sprite2D" parent="." unique_id=768798089]
+position = Vector2(-2608, 561)
+scale = Vector2(1.6961261, 1.6961261)
+texture = ExtResource("25_s2u8w")
 
 [connection signal="body_entered" from="chain_trap/ball" to="." method="_on_ball_body_entered"]
 [connection signal="body_entered" from="checkpoint" to="." method="_on_checkpoint_body_entered"]

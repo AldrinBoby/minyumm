@@ -4,24 +4,22 @@ extends Node2D
 @onready var checkpoint: Area2D = $checkpoint
 @onready var checkpoint_2: Area2D = $checkpoint2
 
+var time = 10
 var respawn : Vector2
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	timer.Timer(10)
+# Called when the node enters the scene tree for the first time
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	player.respawn()
-	print(player.health)
-
+	print(timer.time)
 func _on_checkpoint_body_entered(body: Node2D) -> void:
 	if body == player:
 		respawn = checkpoint.global_position
 		$checkpoint/AnimatedSprite2D.play("active")
-		
+		timer.Timer(time)
 
 
 func _on_checkpoint_2_body_entered(body: Node2D) -> void:
@@ -31,8 +29,10 @@ func _on_checkpoint_2_body_entered(body: Node2D) -> void:
 
 
 func _on_ball_body_entered(body: Node2D) -> void:
-	player.damage(1)
+	if body == player:
+		player.damage(1)
 
 
 func _on_boundary_body_entered(body: Node2D) -> void:
-	player.damage(0)
+	if body == player:
+		player.damage(3)

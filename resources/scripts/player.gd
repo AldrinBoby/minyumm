@@ -4,9 +4,9 @@ extends CharacterBody2D
 @onready var footstep: AudioStreamPlayer2D = $sounds/footstep
 
 @onready var animated: AnimatedSprite2D = $AnimatedSprite2D
-@export var health = 4
+@export var health = 3
 const SPEED = 500.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -425.0
 
 
 func _ready() -> void:
@@ -53,10 +53,11 @@ func _physics_process(delta: float) -> void:
 	elif direction <= -1:
 		animated.play("run")
 		animated.flip_h = 1
-		
+		footstep.playing = 1
 	elif direction == 0:
 		animated.play("idle")
-
+	if $Timer.time < 0:
+		damage(3)
 	move_and_slide()
 	
 func damage(amount:int):
