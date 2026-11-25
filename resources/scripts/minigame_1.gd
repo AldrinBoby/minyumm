@@ -15,14 +15,24 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	player.respawn()
-
+	print(player.health)
 
 func _on_checkpoint_body_entered(body: Node2D) -> void:
 	if body == player:
 		respawn = checkpoint.global_position
+		$checkpoint/AnimatedSprite2D.play("active")
 		
 
 
 func _on_checkpoint_2_body_entered(body: Node2D) -> void:
 	if body == player:
 		respawn = checkpoint_2.global_position
+		$checkpoint2/AnimatedSprite2D.play("active")
+
+
+func _on_ball_body_entered(body: Node2D) -> void:
+	player.damage(1)
+
+
+func _on_boundary_body_entered(body: Node2D) -> void:
+	player.damage(0)

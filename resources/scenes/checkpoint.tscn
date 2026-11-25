@@ -264,7 +264,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_332u2")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"idle",
 "speed": 14.0
 }]
@@ -276,10 +276,11 @@ scale = Vector2(2, 2)
 script = ExtResource("1_khphd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1454889248]
-position = Vector2(9, -32)
+position = Vector2(8.5, -28)
 sprite_frames = SubResource("SpriteFrames_uvdhw")
 animation = &"idle"
-frame_progress = 0.35529387
+frame = 9
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1234151951]
 position = Vector2(0, -27)

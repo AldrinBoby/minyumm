@@ -7,6 +7,7 @@
 radius = 9.0
 
 [node name="chain_trap" type="Node2D" unique_id=1934610839]
+scale = Vector2(3, 3)
 
 [node name="ball" type="Area2D" parent="." unique_id=575030588]
 
@@ -55,5 +56,3 @@ texture = ExtResource("2_cpwov")
 [node name="Chain9" type="Sprite2D" parent="Node2D" unique_id=1717106702]
 position = Vector2(0, 58)
 texture = ExtResource("2_cpwov")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=718028437]

@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c60ps3au1gml8" path="res://resources/assets/character/-fall.png" id="2_hhlkn"]
 [ext_resource type="Texture2D" uid="uid://dibbqyho6j3x7" path="res://resources/assets/character/run.png" id="3_8hawy"]
 [ext_resource type="Texture2D" uid="uid://bnvmpk16giptg" path="res://resources/assets/character/-jump.png" id="3_ubjcb"]
+[ext_resource type="AudioStream" uid="uid://cel5ubr7ss33j" path="res://resources/assets/sounds/slap.wav" id="6_4bag7"]
+[ext_resource type="AudioStream" uid="uid://pmv8y1044ied" path="res://resources/assets/sounds/jump_short.wav" id="7_wwmvc"]
+[ext_resource type="AudioStream" uid="uid://dtxrq85do77p6" path="res://resources/assets/sounds/foley_footstep_vinyl_4.wav" id="8_o7bv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8upip"]
 size = Vector2(9, 18)
@@ -261,3 +264,16 @@ zoom = Vector2(1.5, 1.5)
 limit_top = 73
 limit_bottom = 851
 position_smoothing_enabled = true
+
+[node name="sounds" type="Node2D" parent="." unique_id=1974230737]
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="sounds" unique_id=2050290077]
+stream = ExtResource("6_4bag7")
+volume_db = 24.0
+
+[node name="jump" type="AudioStreamPlayer2D" parent="sounds" unique_id=1884878730]
+stream = ExtResource("7_wwmvc")
+volume_db = 1.944
+
+[node name="footstep" type="AudioStreamPlayer2D" parent="sounds" unique_id=2032982119]
+stream = ExtResource("8_o7bv2")
