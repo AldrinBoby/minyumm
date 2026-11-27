@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://6px87omfmjxw" path="res://resources/assets/pixel_adventure pack/Traps/Spiked Ball/Spiked Ball.png" id="7_ys7jl"]
 [ext_resource type="Texture2D" uid="uid://6kj76e56syk5" path="res://resources/assets/pixel_adventure pack/Traps/Spiked Ball/Chain.png" id="8_k5gso"]
 [ext_resource type="Texture2D" uid="uid://c1ejeb6lrl601" path="res://resources/assets/pixel_adventure pack/Terrain/Terrain (16x16).png" id="8_m5x5l"]
+[ext_resource type="Texture2D" uid="uid://cc4xe0rwdyd6c" path="res://resources/assets/pixel_adventure pack/Traps/Saw/Off.png" id="9_8k3wh"]
+[ext_resource type="Texture2D" uid="uid://dgnfr7e0uiri5" path="res://resources/assets/pixel_adventure pack/Traps/Saw/On (38x38).png" id="10_s2u8w"]
 [ext_resource type="PackedScene" uid="uid://dy7yiuytr5mdo" path="res://resources/scenes/moving_platform.tscn" id="11_3ets1"]
 [ext_resource type="Texture2D" uid="uid://cynv3d7wwyqwf" path="res://resources/assets/swamp-game-tileset/3 Objects/Boxes/3.png" id="12_61f71"]
 [ext_resource type="Texture2D" uid="uid://gs8cdw27rgmk" path="res://resources/assets/swamp-game-tileset/3 Objects/Bushes/9.png" id="13_ax64p"]
@@ -20,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://bs0qtlf6wib3w" path="res://resources/assets/pixel_adventure pack/Items/Checkpoints/Checkpoint/Checkpoint (Flag Out) (64x64).png" id="15_a7pc0"]
 [ext_resource type="Texture2D" uid="uid://b34th5yftx6ej" path="res://resources/assets/pixel_adventure pack/Items/Checkpoints/Checkpoint/Checkpoint (Flag Idle)(64x64).png" id="16_ys7jl"]
 [ext_resource type="Texture2D" uid="uid://c16ffemqohinn" path="res://resources/assets/swamp-game-tileset/3 Objects/Willows/2.png" id="20_vaaki"]
-[ext_resource type="Texture2D" uid="uid://dwbc30sa7dxj1" path="res://resources/assets/swamp-game-tileset/3 Objects/Stones/1.png" id="21_ijhkg"]
 [ext_resource type="Texture2D" uid="uid://evedh2462b6a" path="res://resources/assets/swamp-game-tileset/3 Objects/Ridges/3.png" id="22_swlna"]
 [ext_resource type="Texture2D" uid="uid://d4h2jwdayslao" path="res://resources/assets/swamp-game-tileset/3 Objects/Pointers/1.png" id="23_q4cin"]
 [ext_resource type="Texture2D" uid="uid://d4eh65jijy6k0" path="res://resources/assets/swamp-game-tileset/3 Objects/Grass/2.png" id="24_8k3wh"]
@@ -68,6 +69,126 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_ys7jl"),
 &"spin": SubResource("Animation_k5gso")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu71u"]
+atlas = ExtResource("9_8k3wh")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pseab"]
+atlas = ExtResource("10_s2u8w")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b12n8"]
+atlas = ExtResource("10_s2u8w")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6njy3"]
+atlas = ExtResource("10_s2u8w")
+region = Rect2(76, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oclgx"]
+atlas = ExtResource("10_s2u8w")
+region = Rect2(114, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbpet"]
+atlas = ExtResource("10_s2u8w")
+region = Rect2(152, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4ws4"]
+atlas = ExtResource("10_s2u8w")
+region = Rect2(190, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g048d"]
+atlas = ExtResource("10_s2u8w")
+region = Rect2(228, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfevp"]
+atlas = ExtResource("10_s2u8w")
+region = Rect2(266, 0, 38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uvdhw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nu71u")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pseab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b12n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6njy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oclgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbpet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4ws4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g048d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfevp")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7d7kf"]
+radius = 18.527008
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_da1iy"]
+radius = 15.008331
+
+[sub_resource type="Animation" id="Animation_i7ucd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-48, 522)]
+}
+
+[sub_resource type="Animation" id="Animation_kd8oj"]
+resource_name = "saw"
+length = 3.0000000000000004
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5333333, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-48, 522), Vector2(-48, 342.00006), Vector2(-421.99997, 342.00006)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r12eh"]
+_data = {
+&"RESET": SubResource("Animation_i7ucd"),
+&"saw": SubResource("Animation_kd8oj")
 }
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lpo1a"]
@@ -937,7 +1058,7 @@ region = Rect2(512, 0, 64, 64)
 atlas = ExtResource("16_ys7jl")
 region = Rect2(576, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_uvdhw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbhs1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -1355,10 +1476,32 @@ texture = ExtResource("8_k5gso")
 libraries/ = SubResource("AnimationLibrary_bcibv")
 autoplay = &"spin"
 
+[node name="saw" type="AnimatableBody2D" parent="." unique_id=349346603]
+position = Vector2(-48, 522)
+scale = Vector2(2.5, 2.5)
+
+[node name="saw" type="Area2D" parent="saw" unique_id=45940769]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="saw/saw" unique_id=117429729]
+sprite_frames = SubResource("SpriteFrames_uvdhw")
+animation = &"on"
+autoplay = "on"
+frame_progress = 0.56991094
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saw/saw" unique_id=809298671]
+shape = SubResource("CircleShape2D_7d7kf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="saw" unique_id=1229087486]
+shape = SubResource("CircleShape2D_da1iy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="saw" unique_id=1350098856]
+libraries/ = SubResource("AnimationLibrary_r12eh")
+autoplay = &"saw"
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=454779389]
 position = Vector2(3.0517578e-05, 1.9073486e-06)
 scale = Vector2(3, 2.9999998)
-tile_map_data = PackedByteArray("AAAAAA0AAAAMAAAAAAABAA0AAAANAAAAAAACAA0AAAAOAAAAAAADAA0AAAAPAAAAAAAEAA0AAAAQAAAAAAAFAA0AAAARAAAAAAAGAA0AAAAMAAAAAAAHAA0AAAANAAAAAAAIAA0AAAAOAAAAAAAJAA0AAAAPAAAAAAAKAA0AAAAQAAAAAAALAA0AAAARAAAAAAAOAAgAAAAMAAAAAAAPAAgAAAANAAAAAAAQAAgAAAAOAAAAAAARAAgAAAAPAAAAAAASAAgAAAAQAAAAAAAUAAwAAAAMAAAAAAAVAAwAAAANAAAAAAAWAAwAAAAOAAAAAAAXAAwAAAAPAAAAAAAYAAwAAAAQAAAAAAAXAAYAAAAMAAAAAAAYAAYAAAANAAAAAAAZAAYAAAAOAAAAAAAaAAYAAAAPAAAAAAAbAAYAAAAQAAAAAAAaAAgAAAAMAAAAAAAbAAgAAAANAAAAAAAcAAgAAAAOAAAAAAAdAAgAAAAPAAAAAAAeAAgAAAAQAAAAAAAhAAsAAAAMAAAAAAAiAAsAAAANAAAAAAAjAAsAAAAOAAAAAAAkAAsAAAAPAAAAAAAlAAsAAAAQAAAAAAAjAAYAAAAMAAAAAAAkAAYAAAANAAAAAAAlAAYAAAAOAAAAAAAmAAYAAAAPAAAAAAAnAAYAAAAQAAAAAAAJAAsAAAAMAAAAAAAKAAsAAAANAAAAAAALAAsAAAAOAAAAAAAMAAsAAAAPAAAAAAANAAsAAAAQAAAAAAANAAkAAAAMAAAAAAAOAAkAAAANAAAAAAAPAAkAAAAOAAAAAAAQAAkAAAAPAAAAAAARAAkAAAAQAAAAAAAUAAoAAAAMAAAAAAAVAAoAAAANAAAAAAAWAAoAAAAOAAAAAAAXAAoAAAAPAAAAAAAYAAoAAAAQAAAAAAAhAAgAAAAMAAAAAAAiAAgAAAANAAAAAAAjAAgAAAAOAAAAAAAkAAgAAAAPAAAAAAAlAAgAAAAQAAAAAACz/w4AAAASAAAAAAC0/w4AAAATAAAAAAC1/w4AAAADAAAAAAC2/w4AAAABAAAAAAC3/w4AAAABAAAAAAC4/w4AAAACAAAAAAC5/w4AAAADAAAAAAC6/w4AAAAEAAAAAAC7/w4AAAAFAAAAAAC7/w8AAAAFAAEAAAC7/xAAAAAFAAIAAAC3/w8AAAABAAEAAAC3/xAAAAABAAIAAAC4/w8AAAACAAEAAAC4/xAAAAACAAIAAAC5/w8AAAADAAEAAAC5/xAAAAADAAIAAAC6/w8AAAAEAAEAAAC6/xAAAAAEAAIAAACz/w8AAAASAAEAAACz/xAAAAABAAIAAAC0/w8AAAATAAEAAAC0/xAAAAACAAIAAAC1/w8AAAADAAEAAAC1/xAAAAADAAIAAAC2/w8AAAAEAAEAAAC2/xAAAAAEAAIAAACy/w4AAAAAAAAAAACy/w8AAAAAAAEAAACy/xAAAAAAAAIAAACy/xEAAAAAAAMAAAC7/xEAAAAFAAMAAACz/xEAAAABAAMAAAC0/xEAAAACAAMAAAC1/xEAAAADAAMAAAC2/xEAAAAEAAMAAAC3/xEAAAABAAMAAAC4/xEAAAACAAMAAAC5/xEAAAADAAMAAAC6/xEAAAAEAAMAAACy/wcAAAAMAAAAAACz/wcAAAANAAAAAAC0/wcAAAAOAAAAAAC1/wcAAAAMAAAAAAC2/wcAAAANAAAAAAC3/wcAAAAOAAAAAAC4/wcAAAAPAAAAAAC5/wcAAAAQAAAAAAC6/wcAAAARAAAAAADI/wwAAAAAAAAAAADI/w0AAAAAAAEAAADJ/wwAAAABAAAAAADJ/w0AAAABAAEAAADK/wwAAAACAAAAAADL/wwAAAADAAAAAADM/wwAAAAEAAAAAADN/wwAAAACAAAAAADO/wwAAAADAAAAAADP/wwAAAAEAAAAAADJ/w4AAAABAAIAAADJ/w8AAAABAAMAAADJ/xAAAAABAAQAAADK/w0AAAACAAEAAADK/w4AAAACAAIAAADK/w8AAAACAAMAAADK/xAAAAACAAQAAADL/w0AAAADAAEAAADL/w4AAAADAAIAAADL/w8AAAADAAMAAADL/xAAAAADAAQAAADM/w0AAAAEAAEAAADM/w4AAAAEAAIAAADM/w8AAAAEAAMAAADM/xAAAAAEAAQAAADN/w0AAAAEAAEAAADN/w4AAAAEAAIAAADN/w8AAAAEAAMAAADN/xAAAAAEAAQAAADO/w0AAAAEAAEAAADO/w4AAAAEAAIAAADO/w8AAAAEAAMAAADO/xAAAAAEAAQAAADP/w0AAAAEAAEAAADP/w4AAAAEAAIAAADP/w8AAAAEAAMAAADP/xAAAAAEAAQAAADQ/wwAAAACAAAAAADQ/w0AAAACAAEAAADQ/w4AAAACAAIAAADQ/w8AAAACAAEAAADQ/xAAAAACAAIAAADQ/xEAAAACAAMAAADQ/xIAAAACAAQAAADI/w4AAAAAAAIAAADI/w8AAAAAAAMAAADI/xAAAAAAAAQAAADI/xEAAAAAAAUAAADI/xIAAAAAAAQAAADJ/xEAAAABAAMAAADJ/xIAAAABAAQAAADK/xEAAAACAAMAAADK/xIAAAACAAQAAADL/xEAAAADAAMAAADL/xIAAAADAAQAAADM/xEAAAABAAMAAADM/xIAAAABAAQAAADN/xEAAAACAAMAAADN/xIAAAACAAQAAADO/xEAAAADAAMAAADO/xIAAAADAAQAAADP/xEAAAAEAAMAAADP/xIAAAAEAAQAAADN/wYAAQARAAkAAADK/wQAAAAAAAQAAADK/wUAAAACAAcAAADL/wQAAAABAAMAAADL/wUAAAADAAcAAADM/wQAAAACAAMAAADM/wUAAAAEAAcAAADN/wQAAAADAAMAAADN/wUAAAAFAAcAAADO/wQAAAAEAAMAAADO/wUAAAAGAAcAAADP/wQAAAAHAAYAAADP/wUAAAAHAAcAAADL/wIAAAABAAEAAADL/wMAAAABAAIAAADM/wIAAAACAAEAAADM/wMAAAACAAIAAADN/wIAAAADAAEAAADN/wMAAAADAAIAAADO/wIAAAAEAAEAAADO/wMAAAAEAAIAAADK/wAAAAAAAAAAAADK/wEAAAAAAAEAAADK/wIAAAAAAAIAAADK/wMAAAAAAAMAAADL/wAAAAABAAAAAADM/wAAAAACAAAAAADN/wAAAAADAAAAAADO/wAAAAAEAAAAAADP/wAAAAAFAAAAAADP/wEAAAAFAAEAAADP/wIAAAAFAAIAAADP/wMAAAAFAAMAAADL/wEAAAABAAEAAADM/wEAAAACAAEAAADN/wEAAAADAAEAAADO/wEAAAAEAAEAAADT/wwAAAAFAAAAAADT/w0AAAAFAAEAAADT/w4AAAAFAAIAAADT/w8AAAAFAAMAAADT/xAAAAAFAAQAAADT/xEAAAAFAAMAAADR/wwAAAADAAAAAADS/wwAAAAEAAAAAADR/w0AAAADAAEAAADR/w4AAAADAAIAAADR/w8AAAADAAEAAADR/xAAAAADAAIAAADS/w0AAAAEAAEAAADS/w4AAAAEAAIAAADS/w8AAAAEAAEAAADS/xAAAAAEAAIAAADR/xEAAAADAAMAAADR/xIAAAADAAQAAADS/xEAAAAEAAMAAADS/xIAAAAEAAQAAADT/xIAAAAFAAMAAAA=")
+tile_map_data = PackedByteArray("AAAAAA0AAAAAAAAAAAABAA0AAAANAAAAAAACAA0AAAAOAAAAAAADAA0AAAAPAAAAAAAEAA0AAAAQAAAAAAAFAA0AAAAQAAAAAACz/w4AAAASAAAAAAC0/w4AAAATAAAAAAC1/w4AAAADAAAAAAC2/w4AAAABAAAAAAC3/w4AAAABAAAAAAC4/w4AAAACAAAAAAC5/w4AAAADAAAAAAC6/w4AAAAEAAAAAAC7/w4AAAAFAAAAAAC7/w8AAAAFAAEAAAC7/xAAAAAFAAIAAAC3/w8AAAABAAEAAAC3/xAAAAABAAIAAAC4/w8AAAACAAEAAAC4/xAAAAACAAIAAAC5/w8AAAADAAEAAAC5/xAAAAADAAIAAAC6/w8AAAAEAAEAAAC6/xAAAAAEAAIAAACz/w8AAAASAAEAAACz/xAAAAABAAIAAAC0/w8AAAATAAEAAAC0/xAAAAACAAIAAAC1/w8AAAADAAEAAAC1/xAAAAADAAIAAAC2/w8AAAAEAAEAAAC2/xAAAAAEAAIAAACy/w4AAAAAAAAAAACy/w8AAAAAAAEAAACy/xAAAAAAAAIAAACy/xEAAAAAAAMAAAC7/xEAAAAFAAMAAACz/xEAAAABAAMAAAC0/xEAAAACAAMAAAC1/xEAAAADAAMAAAC2/xEAAAAEAAMAAAC3/xEAAAABAAMAAAC4/xEAAAACAAMAAAC5/xEAAAADAAMAAAC6/xEAAAAEAAMAAACy/wcAAAAMAAAAAACz/wcAAAANAAAAAAC0/wcAAAAOAAAAAAC1/wcAAAAMAAAAAAC2/wcAAAANAAAAAAC3/wcAAAAOAAAAAAC4/wcAAAAPAAAAAAC5/wcAAAAQAAAAAAC6/wcAAAARAAAAAADI/wwAAAAAAAAAAADI/w0AAAAAAAEAAADJ/wwAAAABAAAAAADJ/w0AAAABAAEAAADK/wwAAAACAAAAAADL/wwAAAADAAAAAADM/wwAAAAEAAAAAADN/wwAAAACAAAAAADO/wwAAAADAAAAAADP/wwAAAAEAAAAAADJ/w4AAAABAAIAAADJ/w8AAAABAAMAAADJ/xAAAAABAAQAAADK/w0AAAACAAEAAADK/w4AAAACAAIAAADK/w8AAAACAAMAAADK/xAAAAACAAQAAADL/w0AAAADAAEAAADL/w4AAAADAAIAAADL/w8AAAADAAMAAADL/xAAAAADAAQAAADM/w0AAAAEAAEAAADM/w4AAAAEAAIAAADM/w8AAAAEAAMAAADM/xAAAAAEAAQAAADN/w0AAAAEAAEAAADN/w4AAAAEAAIAAADN/w8AAAAEAAMAAADN/xAAAAAEAAQAAADO/w0AAAAEAAEAAADO/w4AAAAEAAIAAADO/w8AAAAEAAMAAADO/xAAAAAEAAQAAADP/w0AAAAEAAEAAADP/w4AAAAEAAIAAADP/w8AAAAEAAMAAADP/xAAAAAEAAQAAADQ/wwAAAACAAAAAADQ/w0AAAACAAEAAADQ/w4AAAACAAIAAADQ/w8AAAACAAEAAADQ/xAAAAACAAIAAADQ/xEAAAACAAMAAADQ/xIAAAACAAQAAADI/w4AAAAAAAIAAADI/w8AAAAAAAMAAADI/xAAAAAAAAQAAADI/xEAAAAAAAUAAADI/xIAAAAAAAQAAADJ/xEAAAABAAMAAADJ/xIAAAABAAQAAADK/xEAAAACAAMAAADK/xIAAAACAAQAAADL/xEAAAADAAMAAADL/xIAAAADAAQAAADM/xEAAAABAAMAAADM/xIAAAABAAQAAADN/xEAAAACAAMAAADN/xIAAAACAAQAAADO/xEAAAADAAMAAADO/xIAAAADAAQAAADP/xEAAAAEAAMAAADP/xIAAAAEAAQAAADN/wYAAQARAAkAAADK/wQAAAAAAAQAAADK/wUAAAACAAcAAADL/wQAAAABAAMAAADL/wUAAAADAAcAAADM/wQAAAACAAMAAADM/wUAAAAEAAcAAADN/wQAAAADAAMAAADN/wUAAAAFAAcAAADO/wQAAAAEAAMAAADO/wUAAAAGAAcAAADP/wQAAAAHAAYAAADP/wUAAAAHAAcAAADL/wIAAAABAAEAAADL/wMAAAABAAIAAADM/wIAAAACAAEAAADM/wMAAAACAAIAAADN/wIAAAADAAEAAADN/wMAAAADAAIAAADO/wIAAAAEAAEAAADO/wMAAAAEAAIAAADK/wAAAAAAAAAAAADK/wEAAAAAAAEAAADK/wIAAAAAAAIAAADK/wMAAAAAAAMAAADL/wAAAAABAAAAAADM/wAAAAACAAAAAADN/wAAAAADAAAAAADO/wAAAAAEAAAAAADP/wAAAAAFAAAAAADP/wEAAAAFAAEAAADP/wIAAAAFAAIAAADP/wMAAAAFAAMAAADL/wEAAAABAAEAAADM/wEAAAACAAEAAADN/wEAAAADAAEAAADO/wEAAAAEAAEAAADT/wwAAAAFAAAAAADT/w0AAAAFAAEAAADT/w4AAAAFAAIAAADT/w8AAAAFAAMAAADT/xAAAAAFAAQAAADT/xEAAAAFAAMAAADR/wwAAAADAAAAAADS/wwAAAAEAAAAAADR/w0AAAADAAEAAADR/w4AAAADAAIAAADR/w8AAAADAAEAAADR/xAAAAADAAIAAADS/w0AAAAEAAEAAADS/w4AAAAEAAIAAADS/w8AAAAEAAEAAADS/xAAAAAEAAIAAADR/xEAAAADAAMAAADR/xIAAAADAAQAAADS/xEAAAAEAAMAAADS/xIAAAAEAAQAAADT/xIAAAAFAAMAAADp/wwAAAAAAAAAAADp/w0AAAAAAAEAAADp/w4AAAAAAAIAAADq/wwAAAABAAAAAADq/w0AAAABAAEAAADq/w4AAAABAAIAAADr/wwAAAACAAAAAADr/w0AAAABAAEAAADr/w4AAAABAAIAAADp/w8AAAAAAAEAAADp/xAAAAAAAAIAAADp/xEAAAAAAAMAAADp/xIAAAAAAAQAAADq/w8AAAABAAEAAADq/xAAAAABAAIAAADq/xEAAAABAAMAAADq/xIAAAABAAQAAADr/w8AAAABAAMAAADr/xAAAAABAAQAAADr/xEAAAABAAQAAADr/xIAAAACAAQAAADs/w8AAAABAAEAAADs/xAAAAABAAIAAADs/xEAAAABAAMAAADs/xIAAAABAAQAAADt/w8AAAACAAEAAADt/xAAAAACAAIAAADt/xEAAAACAAMAAADt/xIAAAACAAQAAADs/w4AAAABAAIAAADt/w4AAAACAAIAAADu/w4AAAADAAIAAADu/w8AAAADAAEAAADu/xAAAAADAAIAAADu/xEAAAADAAMAAADs/w0AAAABAAEAAADt/w0AAAACAAEAAADu/w0AAAADAAEAAADv/w0AAAAEAAEAAADv/w4AAAAEAAIAAADv/w8AAAAEAAEAAADv/xAAAAAEAAIAAADu/xIAAAADAAQAAADv/xEAAAAEAAMAAADv/xIAAAAEAAQAAADs/wwAAAABAAAAAADt/wwAAAACAAAAAADu/wwAAAADAAAAAADv/wwAAAAEAAAAAADw/wwAAAAFAAAAAADw/w0AAAAFAAEAAADw/w4AAAAFAAIAAADw/w8AAAAFAAEAAADw/xAAAAAFAAIAAADw/xEAAAAFAAMAAADw/xIAAAAFAAQAAAD3/wcAAAAAAAAAAAD3/wgAAAAAAAEAAAD3/wkAAAAAAAIAAAD4/wcAAAABAAAAAAD4/wgAAAABAAEAAAD4/wkAAAABAAIAAAD5/wcAAAACAAAAAAD5/wgAAAACAAEAAAD5/wkAAAACAAIAAAD6/wcAAAABAAAAAAD6/wgAAAABAAEAAAD6/wkAAAABAAIAAAD7/wcAAAACAAAAAAD7/wgAAAACAAEAAAD7/wkAAAACAAIAAAD8/wcAAAADAAAAAAD8/wgAAAADAAEAAAD8/wkAAAADAAIAAAD9/wcAAAAEAAAAAAD9/wgAAAAEAAEAAAD9/wkAAAAEAAIAAAD+/wcAAAAFAAAAAAD+/wgAAAAFAAMAAAD+/wkAAAAFAAMAAAD4/woAAAABAAMAAAD4/wsAAAABAAUAAAD5/woAAAACAAMAAAD5/wsAAAACAAUAAAD6/woAAAABAAMAAAD6/wsAAAABAAUAAAD7/woAAAACAAMAAAD7/wsAAAACAAUAAAD8/woAAAADAAMAAAD8/wsAAAADAAUAAAD9/woAAAAEAAMAAAD9/wsAAAAEAAUAAAD3/woAAAAAAAIAAAD3/wsAAAAAAAUAAAD+/wsAAAAFAAUAAAD+/woAAAAFAAMAAAAFAAcAAAAQAAYAAAAGAAcAAAARAAYAAAAGAA0AAAAFAAAAAAAGAA4AAAAFAAIAAAAGAA8AAAAFAAIAAAAGABAAAAAFAAMAAAAGABEAAAAFAAQAAAAAAA4AAAAAAAEAAAAAAA8AAAAAAAEAAAAAABAAAAAAAAIAAAAAABEAAAAAAAMAAAABAA4AAAABAAEAAAABAA8AAAABAAIAAAACAA4AAAACAAEAAAACAA8AAAACAAIAAAADAA4AAAABAAEAAAADAA8AAAABAAEAAAAEAA4AAAACAAEAAAAEAA8AAAACAAEAAAAFAA4AAAADAAEAAAAFAA8AAAADAAEAAAACABAAAAACAAEAAAACABEAAAACAAIAAAADABAAAAABAAEAAAADABEAAAABAAIAAAAEABAAAAACAAEAAAAEABEAAAACAAIAAAABABAAAAABAAEAAAABABEAAAABAAIAAAAFABAAAAADAAEAAAAFABEAAAADAAIAAAA=")
 tile_set = SubResource("TileSet_tnahs")
 
 [node name="Player" parent="." unique_id=2072494263 instance=ExtResource("2_dgv7e")]
@@ -1377,11 +1520,6 @@ scale = Vector2(1.8175421, 1.6346117)
 position = Vector2(524.88464, 168.84741)
 scale = Vector2(1.8111802, 2.0138705)
 texture = ExtResource("20_vaaki")
-
-[node name="1" type="Sprite2D" parent="sprites" unique_id=255050021]
-position = Vector2(656.93115, -58.117767)
-scale = Vector2(0.35514086, 0.39488488)
-texture = ExtResource("21_ijhkg")
 
 [node name="5" type="Sprite2D" parent="sprites" unique_id=230960343]
 position = Vector2(88.03113, -214.72989)
@@ -1445,35 +1583,36 @@ libraries/ = SubResource("AnimationLibrary_djw1k")
 autoplay = &"move"
 
 [node name="checkpoint" type="Area2D" parent="." unique_id=1182526926]
-position = Vector2(-3596, 644)
+position = Vector2(-3596, 585)
 scale = Vector2(2, 2)
 script = ExtResource("14_m5x5l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="checkpoint" unique_id=1454889248]
-position = Vector2(8.5, -18)
-sprite_frames = SubResource("SpriteFrames_uvdhw")
+position = Vector2(8.5, 13.5)
+sprite_frames = SubResource("SpriteFrames_gbhs1")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.35529387
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="checkpoint" unique_id=1234151951]
-position = Vector2(5.5, -6.5)
+position = Vector2(5.5, 18.5)
 scale = Vector2(8.470185, 8.470185)
 shape = SubResource("CircleShape2D_uvdhw")
 
 [node name="checkpoint2" type="Area2D" parent="." unique_id=797088882]
-position = Vector2(-2180, 576)
+position = Vector2(-2181, 494)
 scale = Vector2(2, 2)
 script = ExtResource("14_m5x5l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="checkpoint2" unique_id=1737701776]
-position = Vector2(9, -32)
-sprite_frames = SubResource("SpriteFrames_uvdhw")
+position = Vector2(13, 35.5)
+sprite_frames = SubResource("SpriteFrames_gbhs1")
 animation = &"idle"
 frame_progress = 0.35529387
+offset = Vector2(-4.5, -26)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="checkpoint2" unique_id=2121144196]
-position = Vector2(0, -27)
+position = Vector2(0, 18)
 scale = Vector2(8.470185, 8.470185)
 shape = SubResource("CircleShape2D_uvdhw")
 
@@ -1567,7 +1706,20 @@ autoplay = "on"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="falling/falling_pf2" unique_id=565084148]
 libraries/ = SubResource("AnimationLibrary_8k3wh")
 
+[node name="platforms" type="Node2D" parent="." unique_id=239581839]
+position = Vector2(-814, 522)
+scale = Vector2(2, 2)
+
+[node name="moving platform2" parent="platforms" unique_id=1567650263 instance=ExtResource("11_3ets1")]
+position = Vector2(0, -3.5)
+scale = Vector2(1, 1)
+
+[node name="moving platform3" parent="platforms" unique_id=1929892870 instance=ExtResource("11_3ets1")]
+position = Vector2(105.5, -42)
+scale = Vector2(1, 1)
+
 [connection signal="body_entered" from="chain_trap/ball" to="." method="_on_ball_body_entered"]
+[connection signal="body_entered" from="saw/saw" to="." method="_on_saw_body_entered"]
 [connection signal="body_entered" from="checkpoint" to="." method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="checkpoint2" to="." method="_on_checkpoint_2_body_entered"]
 [connection signal="body_entered" from="boundary" to="." method="_on_boundary_body_entered"]

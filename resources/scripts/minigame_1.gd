@@ -76,3 +76,8 @@ func _on_area_2d_3_body_exited(body: Node2D) -> void:
 	$falling/falling_pf3.position = Vector2(-252.0,353.0)
 	$falling/falling_pf3/falling_platform/CollisionShape2D.set_deferred("disabled",false)
 # }
+
+
+func _on_saw_body_entered(body: Node2D) -> void:
+	if body == player:
+		player.damage(3)
