@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://77ogu6caq136"]
+
+[ext_resource type="Texture2D" uid="uid://c2g15uixdh06h" path="res://resources/assets/pixel_adventure pack/Traps/Falling Platforms/Off.png" id="1_5flmy"]
+[ext_resource type="Texture2D" uid="uid://dvsp1xyirb27u" path="res://resources/assets/pixel_adventure pack/Traps/Falling Platforms/On (32x10).png" id="2_pt054"]
+
+[sub_resource type="GDScript" id="GDScript_5flmy"]
+script/source = "extends Node2D
+@onready var player: CharacterBody2D = $\"../Player\"
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gj32w"]
+size = Vector2(32, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdhw"]
+size = Vector2(31, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwqph"]
+atlas = ExtResource("2_pt054")
+region = Rect2(0, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytdtv"]
+atlas = ExtResource("2_pt054")
+region = Rect2(32, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iue2q"]
+atlas = ExtResource("2_pt054")
+region = Rect2(64, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmkp4"]
+atlas = ExtResource("2_pt054")
+region = Rect2(96, 0, 32, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uvdhw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5flmy")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwqph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytdtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iue2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmkp4")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_e4n7p"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.36666667, 0.4733333, 0.7033334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 107)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5ents"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.66),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 316)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5q7fn"]
+_data = {
+&"RESET": SubResource("Animation_e4n7p"),
+&"new_animation": SubResource("Animation_5ents")
+}
+
+[node name="falling_pf" type="Node2D" unique_id=448489684]
+script = SubResource("GDScript_5flmy")
+
+[node name="falling_platform" type="AnimatableBody2D" parent="." unique_id=569466835]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="falling_platform" unique_id=1015979011]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_gj32w")
+
+[node name="Area2D" type="Area2D" parent="falling_platform" unique_id=300579732]
+position = Vector2(0, 0.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="falling_platform/Area2D" unique_id=794851641]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_uvdhw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="falling_platform/Area2D" unique_id=1438842623]
+sprite_frames = SubResource("SpriteFrames_uvdhw")
+animation = &"on"
+frame_progress = 0.2682608
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="falling_platform" unique_id=874951701]
+libraries/ = SubResource("AnimationLibrary_5q7fn")

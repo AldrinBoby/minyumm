@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://rh47yghuqab5"]
+
+[ext_resource type="Texture2D" uid="uid://c2g15uixdh06h" path="res://resources/assets/pixel_adventure pack/Traps/Falling Platforms/Off.png" id="1_2naa2"]
+[ext_resource type="Texture2D" uid="uid://dvsp1xyirb27u" path="res://resources/assets/pixel_adventure pack/Traps/Falling Platforms/On (32x10).png" id="2_bj67u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gj32w"]
+size = Vector2(32, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdhw"]
+size = Vector2(37.5, 10.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwqph"]
+atlas = ExtResource("2_bj67u")
+region = Rect2(0, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytdtv"]
+atlas = ExtResource("2_bj67u")
+region = Rect2(32, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iue2q"]
+atlas = ExtResource("2_bj67u")
+region = Rect2(64, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmkp4"]
+atlas = ExtResource("2_bj67u")
+region = Rect2(96, 0, 32, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8k3wh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2naa2")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwqph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytdtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iue2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmkp4")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_swlna"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1926, 524)]
+}
+
+[sub_resource type="Animation" id="Animation_q4cin"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1926, 524), Vector2(-1926, 524), Vector2(-1926, 862)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8k3wh"]
+_data = {
+&"RESET": SubResource("Animation_swlna"),
+&"fall": SubResource("Animation_q4cin")
+}
+
+[node name="falling" type="Node2D" unique_id=966751151]
+
+[node name="falling_pf4" type="Node2D" parent="." unique_id=2044601649]
+position = Vector2(-530, 8)
+
+[node name="falling_platform" type="AnimatableBody2D" parent="falling_pf4" unique_id=869873091]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="falling_pf4/falling_platform" unique_id=759891551]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_gj32w")
+
+[node name="Area2D" type="Area2D" parent="falling_pf4/falling_platform" unique_id=1675681126]
+position = Vector2(0, 0.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="falling_pf4/falling_platform/Area2D" unique_id=1309114271]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_uvdhw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="falling_pf4/falling_platform/Area2D" unique_id=2018246557]
+sprite_frames = SubResource("SpriteFrames_8k3wh")
+animation = &"on"
+autoplay = "on"
+frame_progress = 0.004531713
+
+[node name="falling_pf3" type="Node2D" parent="." unique_id=145030879]
+position = Vector2(-252, 24)
+
+[node name="falling_platform" type="AnimatableBody2D" parent="falling_pf3" unique_id=433256010]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="falling_pf3/falling_platform" unique_id=1276834134]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_gj32w")
+
+[node name="Area2D" type="Area2D" parent="falling_pf3/falling_platform" unique_id=211414591]
+position = Vector2(0, 0.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="falling_pf3/falling_platform/Area2D" unique_id=265731315]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_uvdhw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="falling_pf3/falling_platform/Area2D" unique_id=1278963540]
+sprite_frames = SubResource("SpriteFrames_8k3wh")
+animation = &"on"
+autoplay = "on"
+frame_progress = 0.2682608
+
+[node name="falling_pf2" type="Node2D" parent="." unique_id=1727172402]
+position = Vector2(-1926, 523.6064)
+
+[node name="falling_platform" type="AnimatableBody2D" parent="falling_pf2" unique_id=1356140652]
+position = Vector2(1105, -504)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="falling_pf2/falling_platform" unique_id=1159289692]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_gj32w")
+
+[node name="Area2D" type="Area2D" parent="falling_pf2/falling_platform" unique_id=1688259809]
+position = Vector2(0, 0.5)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="falling_pf2/falling_platform/Area2D" unique_id=675762645]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_uvdhw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="falling_pf2/falling_platform/Area2D" unique_id=161381924]
+sprite_frames = SubResource("SpriteFrames_8k3wh")
+animation = &"on"
+autoplay = "on"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="falling_pf2" unique_id=730991983]
+libraries/ = SubResource("AnimationLibrary_8k3wh")
+
+[node name="falling_pf" type="Node2D" parent="." unique_id=526047664]
+
+[node name="falling_platform" type="AnimatableBody2D" parent="falling_pf" unique_id=1737135474]
+position = Vector2(0, 4)
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="falling_pf/falling_platform" unique_id=71361688]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_gj32w")
+
+[node name="Area2D" type="Area2D" parent="falling_pf/falling_platform" unique_id=282030081]
+position = Vector2(0, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="falling_pf/falling_platform/Area2D" unique_id=1980804352]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_uvdhw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="falling_pf/falling_platform/Area2D" unique_id=1305419131]
+sprite_frames = SubResource("SpriteFrames_8k3wh")
+animation = &"on"
+autoplay = "on"
+frame_progress = 0.55852854
